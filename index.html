@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>work</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            --topcolor: rgb(70, 181, 201);
+            --borcolor: rgb(45, 93, 114);
+            --H4color: rgb(70, 103, 119);
+            --pcolor: rgb(92, 91, 91);
+            --highlight: rgb(75, 127, 153);
+            --sectionpadding: 60px 30px 30px 30px;
+            --sectionborderradius: 40px;
+            --bordercircle: 50px;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: url(img/bg.jpg);
+        }
+
+        .imgBox,
+        img {
+            width: 100%;
+        }
+
+        ul span,
+        H4 {
+            color: var(--H4color);
+        }
+
+        ul li,
+        p {
+            color: var(--pcolor);
+            font-weight: bolder;
+        }
+
+        .textAlignCenter {
+            text-align: center;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .displaynone {
+            display: none;
+        }
+
+        /* header*/
+        .header {
+            background: var(--topcolor);
+            border-bottom: 5px solid transparent;
+            border-image: url(img/header_l.jpg) 0 0 10 0 round;
+            padding-inline: 20px;
+        }
+
+        .header .menustyle {
+            flex-shrink: 0;
+            width: 35px;
+            height: 35px;
+            overflow: hidden;
+            background: rgb(36, 70, 54);
+            border-radius: var(--bordercircle);
+        }
+
+        @media screen and (min-width:800px) {
+            .header .imgBox {
+                width: 200px;
+                position: absolute;
+            }
+
+            .header .menu,
+            .menu2 {
+                position: absolute;
+                right: 10px;
+                top: 35px;
+            }
+
+            .header .menu2 {
+                top: 80px;
+            }
+
+            .header .menu img {
+                transform: translateY(-315px);
+            }
+
+            .header .menu2 img {
+                transform: translateY(-70px);
+            }
+
+            .header .titleImg {
+                padding-top: 30px;
+                width: 600px;
+                margin: 0 auto;
+            }
+
+            .header nav {
+                justify-content: space-around;
+                margin-inline: auto;
+                max-width: 800px;
+            }
+
+            .header .navtext {
+                padding: 15px;
+                margin-bottom: 20px;
+                font-size: 1.3rem;
+                color: black;
+            }
+
+            .header .navtext:hover {
+                background: yellow;
+                border-radius: var(--bordercircle);
+            }
+        }
+
+        /* article-main */
+        .article-main {
+            flex-direction: column;
+            padding-inline: 50px;
+        }
+
+        /* section1 */
+        .section1 {
+            position: relative;
+        }
+
+        .section1TextBox p {
+            line-height: 2rem;
+        }
+
+        @media screen and (min-width:800px) {
+            .displaynone {
+                display: block;
+            }
+
+            .article-main {
+                width: 1000px;
+                padding-top: 20px;
+                margin-inline: auto;
+            }
+
+            .section1 .leftimg {
+                position: absolute;
+                left: calc(20% - 10px);
+                top: 150px;
+            }
+
+            .section1 .rightimg {
+                position: absolute;
+                right: calc(15% - 50px);
+                bottom: -150px;
+                z-index: 1;
+            }
+        }
+
+        /* section2 */
+        .section2 {
+            border: var(--borcolor) 2px solid;
+            border-radius: var(--sectionborderradius);
+            padding: var(--sectionpadding);
+            position: relative;
+            margin-block: 50px;
+            background: white;
+        }
+
+        .section2 .titlebox {
+            width: 100px;
+            height: 100px;
+            background: var(--borcolor);
+            border-radius: 50px;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            position: absolute;
+            left: calc(50% - 45px);
+            top: -50px;
+        }
+
+        .section2 H1 {
+            margin: 0;
+            text-align: center;
+            color: white;
+        }
+
+        .section2 h4 {
+            margin-block: 20px;
+        }
+
+        .section2 li {
+            font-weight: bolder;
+            list-style: none;
+            margin-block: 20px;
+        }
+
+        .section2 span {
+            margin-right: 10px;
+        }
+
+        .section2 .highlight {
+            color: var(--highlight);
+        }
+
+        @media screen and (min-width:800px) {
+            .inline {
+                display: inline;
+            }
+
+            .section2 {
+                padding-top: 40px;
+            }
+
+            .section2 .leftimg2 {
+                position: absolute;
+                left: -50px;
+                bottom: 50px;
+            }
+
+            .section2 .titlebox {
+                left: -30px;
+                top: -60px;
+            }
+
+            .section2 p {
+                display: inline;
+            }
+
+            .section2 .textboxstyle1 {
+                padding-right: calc(30% - 15px);
+            }
+
+            .section2 .imgBox img {
+                padding-inline: 30px 0;
+                height: 400px;
+                width: 100%;
+            }
+        }
+
+        /* footer */
+        .footerTextandImg {
+            flex-direction: column;
+            background: rgb(82, 82, 82);
+        }
+
+        .footer h3 {
+            color: white;
+            text-align: center;
+            padding-block: 10px;
+        }
+
+        .footer .footerimgbox {
+            display: flex;
+            margin-block: 1px;
+        }
+
+        .footerimgbox .imgBox {
+            margin-inline: 1px;
+            background: black;
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer img {
+            width: auto;
+            height: 100px;
+        }
+
+        .footerbuttontext {
+            padding-block: 5px;
+            color: white;
+            font-size: 0.1rem;
+            text-align: center;
+            background: black;
+        }
+
+        @media screen and (min-width:800px) {
+            .footerTextandImg {
+                flex-direction: row;
+                background: black;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+            }
+
+            .footertextbox {
+                background: gray;
+                border-radius: 50px;
+                padding: 5px;
+            }
+
+            .footer h3 {
+                width: 60px;
+            }
+
+            .footer img {
+                height: 50px;
+            }
+
+            .footerbuttontext {
+                border-top: 1px gray solid;
+                padding-block: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class='flex'>
+            <div class="imgBox">
+                <img src="img/logo_top.png" alt="">
+            </div>
+            <div class="menustyle menu ">
+                <img src="img/m_menu.png" alt="">
+            </div>
+            <div class="menustyle menu2 displaynone">
+                <img src="img/m_menu.png" alt="">
+            </div>
+        </div>
+        <div class="titleImg">
+            <img src="img/title.png" alt="">
+        </div>
+        <nav class="flex">
+            <p class="navtext displaynone">活動辦法</p>
+            <p class="navtext displaynone">全台海選</p>
+            <p class="navtext displaynone">TOP12決賽</p>
+            <p class="navtext displaynone">制服辣秘辛</p>
+        </nav>
+    </header>
+
+    <article class='article-main flex'>
+        <section class="section1">
+            <picture class="imgBox">
+                <source srcset="img/p_title.png" media="(min-width:780px)">
+                <img src="img/p_title_m.png" alt="">
+            </picture>
+            <div class="section1TextBox textAlignCenter">
+                <p>專屬高校生的青春印記</p>
+                <p>第三屆畢業季高校制服大賞熱血開跑！</p>
+                <p>網羅全台逾500所高中校園制服進行強烈的廝殺票選</p>
+                <p>究竟是純潔無敵白襯衫、萬年不敗的水手服</p>
+                <p>還是充滿萌味的連身款能奪下最終勝利呢?</p>
+                <p class="inline">在即將來臨的畢業季</p>
+                <span class="inline displaynone">、</span>
+                <p class="inline">為自己的學校制服再添一筆輝煌記事吧！</p>
+                <p>今年，2016的制服大賞，你投哪一家！</p>
+            </div>
+            <div class="leftimg displaynone">
+                <img src="img/hat.png" alt="">
+            </div>
+            <div class="rightimg displaynone">
+                <img src="img/girl1.png" alt="">
+            </div>
+        </section>
+
+        <section class="section2">
+            <div class="titlebox">
+                <H1>活動<br>時間</H1>
+            </div>
+            <div class="textboxstyle1">
+                <H4>第一階段－全台海選： <p>2016/04/11－04/29，23:59止</p>
+                </H4>
+                <H4 class="inline">第二階段－TOP12決賽</H4>
+                <H4 class="inline">(最佳人氣/最萌女校服/最鮮男校服)： <p>2016/05/09－05/27，23:59止</p>
+                </H4>
+                <H4>得獎公佈：<p>2016/06/08 公布於同網頁，敬請密切注意！</p>
+                </H4>
+            </div>
+
+        </section>
+        <section class="section2">
+            <div class="titlebox">
+                <H1>賽程</H1>
+                <H1>說明</H1>
+            </div>
+            <div>
+                <H4>第一階段－全台海選：<p>請進入制服地圖活動頁面，登入FB帳號即可投票，每日每帳號可投20票，同項目不可重複投票。</p>
+                </H4>
+                <H4 class="inline">第二階段－TOP12決賽</H4>
+                <H4 class="inline">(最佳人氣/最萌女校服/最鮮男校服)：<p>請進入 SETN.com 三立新聞網活動頁面，登入FB帳號即可投票，每小時每帳號可投6票，同項目不可重複投票。</p>
+                </H4>
+            </div>
+            <picture class="imgBox">
+                <source srcset="img/way_p.jpg" media="(min-width:780px)">
+                <img src='img/way_mobile.jpg' alt="">
+            </picture>
+            <div class="leftimg2 displaynone">
+                <img src="img/girl2.png" alt="">
+            </div>
+        </section>
+
+        <section class="section2">
+            <div class="titlebox">
+                <H1>活動<br>獎項</H1>
+            </div>
+            <div>
+                <H4>參加獎 : <p>凡參加投票者皆具備抽獎資格，共11名。</p>
+                </H4>
+            </div>
+            <div>
+                <h4>神準獎 : <p>精準預測前12強之投票者，及有機會獲得ooooo共XX名。</p>
+                </h4>
+            </div>
+            <div>
+                <h4>應援獎 : <p>應元冠軍隊伍之投票者，及有機會獲得ooooo共XX名。</p>
+                </h4>
+            </div>
+            <div class=" ">
+                <h4>讚聲獎 : <p>活動期間，分享活動訊息至FB皆具備抽獎資格，共XX名。</p>
+                </h4>
+            </div>
+        </section>
+        <section class="section2">
+            <div class="titlebox">
+                <H1>活動<br>獎項</H1>
+            </div>
+            <ul>
+                <li><span>01.</span>
+                    參賽者及參與投票網友所提供之個人資料，僅作為抽獎、寄發中獎通知及主辦單位寄發相關資訊使用。每人僅限一次中獎的機會，如發現重複中獎之情況或冒用他人姓名參加活動，將取消重複中獎資格。
+                </li>
+                <li><span>02.</span>
+                    得獎將公布於活動網頁，中獎者將以Facebook登錄的Email進行mail通知，若在期限內未回覆正確聯絡資料者，視同放棄中獎資格。
+                </li>
+                <li><span>03.</span>
+                    請確認您的得獎回傳通知所填寫的聯絡及地址資料，所有資料皆會保密，只作為獎品寄送依據。逾時未修改正確寄送地址、或因資料填寫不完整或不正確導致無法通知中獎時，將視為放棄領獎資格，獎項不另行補發。
+                </li>
+                <li><span>04.</span>
+                    如有任何因電腦、網路、電話、技術或不可歸責於主辦單位之事由，而使寄予得獎人之獎品有遲延、遺失、錯誤、無法辨識或毀損之情況，主辦單
+                    位不負任何法律責任，參加者亦不得因此異議。
+                </li>
+                <li><span>05.</span>
+                    活動之獎品以寄送的實物為準，獎品不得轉換、轉讓或折換現金。得獎者應依政府規定，獎品價值超過NT$20,000以上，依國稅局規定需繳交10%稅金。
+                </li>
+                <li><span>06.</span>
+                    本活動為公開良性競賽性質，參賽者不得有舞弊、或惡意攻擊訐等情事。如有以下行為主辦單位有權取消參加資格，並保留相關法律追訴權利：使用不當行為或程式灌票或干擾活動進行、傳播不實謠言，造成本活動或本公司名譽受損、違反本活動辦法及政府法令之行為等。
+                </li>
+                <li><span>07.</span>
+                    本活動主辦單位，對本活動網站有絕對的管理權，並就參賽者或投票者之資格及票數有審查之權利；若經審認資格不符或票數有不當、不妥情事者，本活動主辦單位有權取消得獎資格或逕行刪除參賽票數且不予事先告知。
+                </li>
+                <li><span>08.</span>
+                    活動辦法載明於本活動網頁中，參加者於參加本活動之同時，即視為同意並遵守本活動相關規範及注意事項。如本活動因不可抗力之特殊原因無法執行時，主辦單位有權決定取消、終止、修改或暫停本活動。主辦單位亦保有修正、暫停或終止本活動之權利，恕不另行通知。
+                </li>
+                <li><span>09.</span>
+                    此活動所使用之軟體或程式及網站上所有內容，均由主辦單位擁有其智慧財產權，任何人不得逕自使用、修改、重製、公開播送、改作、散布、發行、公開發表、進行還原工程、解編或反向組譯。若欲引用其內容，必須依法取得本活動主辦單位之正式書面授權。
+                </li>
+                <li class="highlight">※本活動並非由Facebook平台贊助、管理及開發，本活動乃由 SETN.com
+                    三立新聞網/制服地圖主辦，並透過此活動網頁所提供的活動管理服務來舉辦、管理本活動，您在本活動所做的行為，與所提供的資料僅提供予主辦單位管理本活動使用。
+                </li>
+            </ul>
+        </section>
+    </article>
+
+
+    <footer class="footer">
+        <div class="footerTextandImg flex">
+            <div class="footertextbox">
+                <h3>執行<br class="displaynone">單位</h3>
+            </div>
+            <div class="footerimgbox">
+                <div class="imgBox"><img src="img/f_aken.png" alt=""></div>
+                <div class="imgBox"><img src="img/f_ga.png" alt=""></div>
+            </div>
+            <div class="footerimgbox">
+                <div class="imgBox"><img src="img/f_hairdodo.png" alt=""></div>
+                <div class="imgBox"><img src="" alt=""></div>
+            </div>
+            <div class="footertextbox">
+                <h3>特別<br class="displaynone">感謝</h3>
+            </div>
+            <div class="footerimgbox">
+                <div class="imgBox"><img src="img/f_motage.png" alt=""></div>
+                <div class="imgBox"><img src="img/f_om.png" alt=""></div>
+            </div>
+            <div class="footerimgbox">
+                <div class="imgBox"><img src="img/f_setn.png" alt=""></div>
+                <div class="imgBox"><img src="img/f_st.png" alt=""></div>
+            </div>
+        </div>
+        <div>
+            <p class="footerbuttontext">&copy 2016 SANLIH E-TELEVISION</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
